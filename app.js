@@ -124,7 +124,7 @@ app.post('/webhook', async (req, res) => {
 
 
 
-const PORT = 4000;
-app.listen(PORT || process.env.PORT, () => {
-    console.log(`Servser Started`+PORT || process.env.PORT,);
+
+app.listen(process.env.PORT, () => {
+    console.log(`Servser Started on port `+ process.env.PORT);
 });
