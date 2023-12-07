@@ -112,6 +112,14 @@ app.post('/webhook', async (req, res) => {
             var fieldId = "documentos_pessoais_do_associado"
         }
 
+        if(namefile.includes("Laudo")){
+            var fieldId = "arquivo_receita_m_dica"
+        }
+
+        if(namefile.includes("Receita")){
+            var fieldId = "copy_of_arquivo_receita_m_dica"
+        }
+
         setTimeout(async function(){
             const upload = await pipefyRequest('mutation { updateCardField(input: {card_id: '+cardId+', field_id: "'+fieldId+'", new_value: ["'+codFile+'"]}) { clientMutationId success } }')
         },1500)
